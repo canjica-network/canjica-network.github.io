@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canjica Network</title>
-    <!-- Importando uma fonte com estilo Gamer/Tech do Google Fonts -->
+    <!-- Fonte Gamer/Tech do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Estilos Base - Reset e Tela Cheia */
         * {
             box-sizing: border-box;
         }
 
         body {
             font-family: 'Chakra Petch', sans-serif;
-            background-color: #0b0b0e; /* Fundo bem escuro */
+            background-color: #0b0b0e;
             color: #e0e0e0;
             margin: 0;
             padding: 0;
-            height: 100vh; /* Pega 100% da altura da tela */
+            height: 100vh; /* Ocupa 100% da altura da tela */
             display: flex;
             flex-direction: column;
         }
@@ -32,7 +31,7 @@
         }
 
         .tab {
-            border: 2px solid #ff4766; /* Rosa/Vermelho neon baseado na sua logo */
+            border: 2px solid #ff4766;
             border-bottom: none;
             background-color: #16161e;
             padding: 15px 40px;
@@ -49,72 +48,66 @@
             background-color: #ff4766;
             color: #0b0b0e;
             box-shadow: 0 -5px 20px rgba(255, 71, 102, 0.5);
-            text-shadow: 0 0 5px rgba(0,0,0,0.5);
         }
 
-        /* Caixa Principal que Toma a Tela Toda */
+        /* Caixa de Conteúdo em Tela Cheia */
         .content-box {
             border: 2px solid #ff4766;
             background-color: #121218;
-            background-image: radial-gradient(circle at center, #1a1a24 0%, #121218 100%); /* Efeito sutil de luz no fundo */
+            background-image: radial-gradient(circle at center, #1a1a24 0%, #121218 100%);
             margin: 0 20px 20px 20px;
-            flex-grow: 1; /* Faz a caixa esticar para preencher o resto da tela */
+            flex-grow: 1; /* Preenche todo o resto da tela */
             box-shadow: 0 0 25px rgba(255, 71, 102, 0.15), inset 0 0 30px rgba(0,0,0,0.8);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center; /* Centraliza tudo perfeitamente no meio da tela */
+            justify-content: center;
             padding: 40px;
             text-align: center;
         }
 
-        /* Logo com Efeito Glow */
         .logo {
-            max-width: 550px;
+            max-width: 500px;
             width: 100%;
             margin-bottom: 20px;
-            filter: drop-shadow(0 0 15px rgba(255, 71, 102, 0.3)); /* Brilho atrás da logo */
+            filter: drop-shadow(0 0 15px rgba(255, 71, 102, 0.3));
         }
 
         .description {
             font-size: 24px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: #a0a0b0;
             line-height: 1.5;
         }
 
         .headline {
-            font-size: 55px;
+            font-size: 48px;
             font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             color: #ffffff;
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            letter-spacing: 2px;
         }
 
-        /* Área do Botão e Texto */
         .action-area {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
-        /* Texto no lugar da capa do álbum */
-        .album-text {
-            font-size: 32px;
-            font-weight: bold;
-            color: #ff4766;
-            font-family: monospace; /* Fonte tipo "código" para dar o ar de placeholder/gamer */
-            background: rgba(255, 71, 102, 0.05);
-            padding: 15px 30px;
-            border: 2px dashed #ff4766; /* Borda tracejada */
-            text-shadow: 0 0 10px rgba(255, 71, 102, 0.4);
+        /* Estilo da Imagem da Capa do Álbum */
+        .album-cover {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 2px solid #ff4766;
+            box-shadow: 0 0 20px rgba(255, 71, 102, 0.4);
+            border-radius: 4px;
         }
 
-        /* Botão OUVIR estilo Cyberpunk */
+        /* Botão Cyberpunk */
         .btn-ouvir {
             background-color: #ff4766;
             color: #000;
@@ -124,7 +117,7 @@
             padding: 20px 80px;
             text-transform: uppercase;
             box-shadow: 0 0 20px rgba(255, 71, 102, 0.5);
-            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%); /* Corte diagonal nas pontas */
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
             transition: all 0.2s ease;
         }
 
@@ -137,7 +130,7 @@
 </head>
 <body>
 
-    <!-- Abas de Navegação -->
+    <!-- Abas -->
     <div class="tabs">
         <a href="#" class="tab">INICIO</a>
         <a href="#" class="tab">NOTICIAS</a>
@@ -146,28 +139,21 @@
 
     <!-- Conteúdo Principal Tela Cheia -->
     <div class="content-box">
-        <!-- Imagem da Logo -->
         <img src="Logo Canjica.png" alt="Canjica Network Logo" class="logo">
 
-        <!-- Texto de Descrição -->
         <p class="description">
             empresa legal cheia de videos<br>
             legais aura eu sou o polnas!
         </p>
 
-        <!-- Título Principal -->
         <div class="headline">
             VEJA: DDD23 LANÇA<br>NOVO ALBUM
         </div>
 
-        <!-- Área de Ação -->
         <div class="action-area">
-            <!-- Texto estilo placeholder no lugar da capa -->
-            <div class="album-text">
-                [Mr. Andrey & The Big Kaisers]
-            </div>
+            <!-- Capa do álbum em imagem real -->
+            <img src="Mr. Andrey & The Big Kaisers.png" alt="Mr. Andrey & The Big Kaisers" class="album-cover">
             
-            <!-- Botão com o link do YouTube -->
             <a href="https://youtu.be/yuk_pBFBB5s" target="_blank" class="btn-ouvir">OUVIR</a>
         </div>
     </div>
