@@ -4,133 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canjica Network</title>
+    <!-- Importando uma fonte com estilo Gamer/Tech do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Estilos da Página (CSS) */
+        /* Estilos Base - Reset e Tela Cheia */
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4; /* Fundo cinza claro para destacar a caixa branca */
-            display: flex;
-            justify-content: center;
-            padding: 40px 20px;
+            font-family: 'Chakra Petch', sans-serif;
+            background-color: #0b0b0e; /* Fundo bem escuro */
+            color: #e0e0e0;
             margin: 0;
+            padding: 0;
+            height: 100vh; /* Pega 100% da altura da tela */
+            display: flex;
+            flex-direction: column;
         }
 
-        .main-container {
-            width: 100%;
-            max-width: 900px;
-        }
-
-        /* Sistema de Abas (Menu) */
+        /* Sistema de Abas */
         .tabs {
             display: flex;
-            gap: 15px;
-            margin-bottom: -3px; /* Puxa as abas para baixo para "grudar" na caixa principal */
-            padding-left: 20px;
+            gap: 10px;
+            padding: 20px 20px 0 20px;
         }
 
         .tab {
-            border: 3px solid black;
+            border: 2px solid #ff4766; /* Rosa/Vermelho neon baseado na sua logo */
             border-bottom: none;
-            background-color: white;
-            padding: 10px 40px;
-            font-size: 22px;
+            background-color: #16161e;
+            padding: 15px 40px;
+            font-size: 20px;
+            font-weight: bold;
             text-decoration: none;
-            color: black;
+            color: #ff4766;
             text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 -5px 15px rgba(255, 71, 102, 0.1);
         }
 
-        /* Caixa de Conteúdo Principal */
+        .tab:hover {
+            background-color: #ff4766;
+            color: #0b0b0e;
+            box-shadow: 0 -5px 20px rgba(255, 71, 102, 0.5);
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        /* Caixa Principal que Toma a Tela Toda */
         .content-box {
-            border: 3px solid black;
-            background-color: white;
-            padding: 50px 20px;
+            border: 2px solid #ff4766;
+            background-color: #121218;
+            background-image: radial-gradient(circle at center, #1a1a24 0%, #121218 100%); /* Efeito sutil de luz no fundo */
+            margin: 0 20px 20px 20px;
+            flex-grow: 1; /* Faz a caixa esticar para preencher o resto da tela */
+            box-shadow: 0 0 25px rgba(255, 71, 102, 0.15), inset 0 0 30px rgba(0,0,0,0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; /* Centraliza tudo perfeitamente no meio da tela */
+            padding: 40px;
             text-align: center;
         }
 
+        /* Logo com Efeito Glow */
         .logo {
-            max-width: 400px;
-            height: auto;
-            margin-bottom: 30px;
+            max-width: 550px;
+            width: 100%;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(255, 71, 102, 0.3)); /* Brilho atrás da logo */
         }
 
         .description {
-            font-size: 22px;
-            margin: 0 auto 40px auto;
-            line-height: 1.4;
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #a0a0b0;
+            line-height: 1.5;
         }
 
         .headline {
-            font-size: 42px;
-            font-weight: bold;
+            font-size: 55px;
+            font-weight: 700;
             text-transform: uppercase;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            color: #ffffff;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
         }
 
-        /* Área do Álbum e Botão */
+        /* Área do Botão e Texto */
         .action-area {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 40px;
-            flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+            gap: 50px;
+            flex-wrap: wrap;
         }
 
-        .album-placeholder {
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .btn-ouvir {
-            background-color: #e62429; /* Vermelho inspirado na sua logo */
-            color: black;
-            font-weight: bold;
+        /* Texto no lugar da capa do álbum */
+        .album-text {
             font-size: 32px;
+            font-weight: bold;
+            color: #ff4766;
+            font-family: monospace; /* Fonte tipo "código" para dar o ar de placeholder/gamer */
+            background: rgba(255, 71, 102, 0.05);
+            padding: 15px 30px;
+            border: 2px dashed #ff4766; /* Borda tracejada */
+            text-shadow: 0 0 10px rgba(255, 71, 102, 0.4);
+        }
+
+        /* Botão OUVIR estilo Cyberpunk */
+        .btn-ouvir {
+            background-color: #ff4766;
+            color: #000;
+            font-weight: bold;
+            font-size: 38px;
             text-decoration: none;
-            padding: 20px 60px;
-            display: inline-block;
-            transition: transform 0.2s; /* Efeito suave ao passar o mouse */
+            padding: 20px 80px;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(255, 71, 102, 0.5);
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%); /* Corte diagonal nas pontas */
+            transition: all 0.2s ease;
         }
 
         .btn-ouvir:hover {
-            transform: scale(1.05); /* Aumenta um pouquinho o botão no hover */
+            background-color: #ff6b85;
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255, 71, 102, 0.8);
         }
     </style>
 </head>
 <body>
 
-    <div class="main-container">
-        <!-- Abas de Navegação -->
-        <div class="tabs">
-            <a href="#" class="tab">INICIO</a>
-            <a href="#" class="tab">NOTICIAS</a>
-            <a href="#" class="tab">KAISER</a>
+    <!-- Abas de Navegação -->
+    <div class="tabs">
+        <a href="#" class="tab">INICIO</a>
+        <a href="#" class="tab">NOTICIAS</a>
+        <a href="#" class="tab">KAISER</a>
+    </div>
+
+    <!-- Conteúdo Principal Tela Cheia -->
+    <div class="content-box">
+        <!-- Imagem da Logo -->
+        <img src="Logo Canjica.png" alt="Canjica Network Logo" class="logo">
+
+        <!-- Texto de Descrição -->
+        <p class="description">
+            empresa legal cheia de videos<br>
+            legais aura eu sou o polnas!
+        </p>
+
+        <!-- Título Principal -->
+        <div class="headline">
+            VEJA: DDD23 LANÇA<br>NOVO ALBUM
         </div>
 
-        <!-- Conteúdo Principal -->
-        <div class="content-box">
-            <!-- Imagem da Logo -->
-            <img src="Logo Canjica.png" alt="Canjica Network Logo" class="logo">
-
-            <!-- Texto de Descrição -->
-            <p class="description">
-                empresa legal cheia de videos<br>
-                legais aura eu sou o polnas!
-            </p>
-
-            <!-- Título Principal -->
-            <div class="headline">
-                VEJA: DDD23 LANÇA<br>NOVO ALBUM
+        <!-- Área de Ação -->
+        <div class="action-area">
+            <!-- Texto estilo placeholder no lugar da capa -->
+            <div class="album-text">
+                [Mr. Andrey & The Big Kaisers]
             </div>
-
-            <!-- Área de Ação (Imagem do Álbum e Botão) -->
-            <div class="action-area">
-                <div class="album-placeholder">
-                    [Mr. Andrey & The Big Kaisers.png]
-                </div>
-                
-                <!-- Botão com o link do YouTube que você colocou no mockup -->
-                <a href="https://youtu.be/yuk_pBFBB5s" target="_blank" class="btn-ouvir">OUVIR</a>
-            </div>
+            
+            <!-- Botão com o link do YouTube -->
+            <a href="https://youtu.be/yuk_pBFBB5s" target="_blank" class="btn-ouvir">OUVIR</a>
         </div>
     </div>
 
